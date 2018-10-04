@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Source Checkout') {
       steps {
-        git(url: 'https://github.com/gargmunish/jenkins', branch: 'master')
+        git(url: 'https://github.com/gargmunish/hello-spring-cloud-master', branch: 'master')
       }
     }
     stage('Code Scan') {
