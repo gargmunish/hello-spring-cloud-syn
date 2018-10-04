@@ -25,16 +25,16 @@ pipeline {
         }
       }
     }
-    stage('Build Business Service') {
+    stage('Build Services') {
       parallel {
-        stage('Build-BusinessService') {
+        stage('Business') {
           steps {
             sh 'mvn clean install'
           }
         }
-        stage('Build Data Service') {
+        stage('Data') {
           steps {
-            sh 'mvn clean install'
+            sh 'echo"Data"'
           }
         }
       }
