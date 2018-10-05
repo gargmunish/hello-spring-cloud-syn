@@ -21,12 +21,18 @@ import org.springframework.ui.Model;
 import org.springframework.util.ReflectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller
+@RestController
 public class HomeController {
 
     @RequestMapping("/")
     public String home(Model model) {
 
         return "home-homecontroller";
+    }
+    
+    @RequestMapping("/search")
+    public String home(Model model) {
+
+        return "home-homecontroller-search";
     }
 }
