@@ -14,8 +14,9 @@ public class HomeController {
     }
     
     @RequestMapping("/search")
-    public String home(Model model) {
+    public String home2(Model model) {
 
         return "home-homecontroller-search";
     }
 }
+
