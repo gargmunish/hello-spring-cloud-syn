@@ -41,7 +41,7 @@ pipeline {
     }
     stage('Deploy to Dev') {
       steps {
-        sh '## add Test here'
+        sh 'cf push -f ./manifest_dev.yml'
       }
     }
     stage('Unit Test') {
