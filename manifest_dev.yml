@@ -1,0 +1,8 @@
+applications:
+ - name:springstorm
+   memory: 512M
+   instances: 2
+   routes
+   - route: springcloud.local.pcfdev.io 
+   path: ./target/hello-spring-cloud-0.0.1.BUILD-SNAPSHOT.jar   
+   
