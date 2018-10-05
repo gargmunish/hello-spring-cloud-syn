@@ -2,7 +2,7 @@ applications:
  - name: hello-spring-cloud
    memory: 512M
    instances: 2
-   routes
+   routes:
    - route: springcloud.local.pcfdev.io 
    path: ./target/hello-spring-cloud-0.0.1.BUILD-SNAPSHOT.jar   
    
