@@ -84,11 +84,11 @@
 		<developerConnection>scm:svn:https://none</developerConnection>
 		<url>scm:svn:https://none</url>
 	</scm-->
-	 <scm>
-	    <connection>https://github.com/gargmunish/hello-spring-cloud-master.git</connection>
-	    <developerConnection>https://github.com/gargmunish/hello-spring-cloud-master.git</developerConnection>
-	    <tag>master</tag>
-	    <url>https://github.com/gargmunish/hello-spring-cloud-master.git</url>
+	<scm>
+	<connection>scm:git:https://github.com/gargmunish/hello-spring-cloud-master.git</connection>
+	<developerConnection>scm:git:https://github.com/gargmunish/hello-spring-cloud-master.git</developerConnection>
+	<url>https://github.com/gargmunish/hello-spring-cloud-master.git</url>
+	<tag>master</tag>
 	</scm>
 	<build>
 		<pluginManagement>
