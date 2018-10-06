@@ -79,7 +79,11 @@
 		<spring-cloud.version>1.2.3.RELEASE</spring-cloud.version>
 		<postgres-driver.version>9.0-801.jdbc4</postgres-driver.version>
 	</properties>
-
+	<scm>
+		<connection>scm:svn:http://none</connection>
+		<developerConnection>scm:svn:https://none</developerConnection>
+		<url>scm:svn:https://none</url>
+	</scm>
 	<build>
 		<pluginManagement>
 		      <plugins>
