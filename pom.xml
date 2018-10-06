@@ -131,6 +131,14 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</pluginRepository>
+		<pluginRepository>
+			<id>maven-releases</id>
+			<name>maven-releases</name>
+			<url>http://localhost:8081/#browse/browse</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
 	</pluginRepositories>
 
 </project>
