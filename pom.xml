@@ -79,10 +79,16 @@
 		<spring-cloud.version>1.2.3.RELEASE</spring-cloud.version>
 		<postgres-driver.version>9.0-801.jdbc4</postgres-driver.version>
 	</properties>
-	<scm>
+	<!--scm>
 		<connection>scm:svn:http://none</connection>
 		<developerConnection>scm:svn:https://none</developerConnection>
 		<url>scm:svn:https://none</url>
+	</scm-->
+	 <scm>
+	    <connection>git@github.com:gargmunish/hello-spring-cloud-master.git</connection>
+	    <developerConnection>git@github.com:gargmunish/hello-spring-cloud-master.git</developerConnection>
+	    <tag>master</tag>
+	    <url>https://github.com/gargmunish/hello-spring-cloud-master.git</url>
 	</scm>
 	<build>
 		<pluginManagement>
@@ -117,8 +123,8 @@
 				  <items>
 					<item>buildNumber</item>
 				  </items>                    
-				  <doCheck>false</doCheck>
-				  <doUpdate>false</doUpdate>
+				  <doCheck>true</doCheck>
+				  <doUpdate>true</doUpdate>
 				  <revisionOnScmFailure>unknownbuild</revisionOnScmFailure>   
 				</configuration>
 			  </plugin>   
