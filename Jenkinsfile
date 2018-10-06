@@ -29,7 +29,7 @@ pipeline {
       parallel {
         stage('Business') {
           steps {
-            sh 'mvn clean install'
+            sh 'mvn clean install deploy'
           }
         }
         stage('Data') {
