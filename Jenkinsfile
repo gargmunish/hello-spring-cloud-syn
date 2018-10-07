@@ -44,6 +44,8 @@ mvn clean install deploy'''
       steps {
         script {
           withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+            sh 'git config user.email "tradetools@fedex.com"'
+            sh 'git config user.name ${GIT_USERNAME} '
             sh 'git add pom.xml'
             sh 'git commit -m "updated build number" '
           }
