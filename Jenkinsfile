@@ -42,7 +42,9 @@ mvn clean install deploy'''
     }
     stage('Update Build#') {
       steps {
-        sh 'git add pom.xml'
+        sh '''git add pom.xml
+git commit -m "updated build number"
+git push origin'''
       }
     }
     stage('Deploy to Dev') {
