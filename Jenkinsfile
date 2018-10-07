@@ -40,11 +40,6 @@ mvn clean install deploy'''
         }
       }
     }
-    stage('Update Build#') {
-      steps {
-        sh '''git add pom.xml git commit -m "updated build number" git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/gargmunish/hello-spring-cloud-master.git''
-     }
-    }
     stage('Deploy to Dev') {
       steps {
         sh 'cf push -f ./manifest_dev.yml'
