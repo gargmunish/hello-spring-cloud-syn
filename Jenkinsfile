@@ -29,7 +29,8 @@ pipeline {
       parallel {
         stage('Business') {
           steps {
-            sh 'mvn clean install deploy'
+            sh '''mvn build-helper:parse-version versions:set -DnewVersion=\\${parsedVersion.majorVersion}.\\${parsedVersion.minorVersion}.\\${parsedVersion.nextIncrementalVersion} versions:commit
+mvn clean install deploy'''
           }
         }
         stage('Data') {
