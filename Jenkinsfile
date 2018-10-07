@@ -48,6 +48,7 @@ mvn clean install deploy'''
             sh 'git config user.name ${GIT_USERNAME} '
             sh 'git add pom.xml'
             sh 'git commit -m "updated build number" '
+            sh 'git push origin'
           }
         }
 
