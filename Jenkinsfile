@@ -29,7 +29,7 @@ pipeline {
       parallel {
         stage('Business') {
           steps {
-            sh '''mvn build-helper:parse-version versions:set -DnewVersion=\\${parsedVersion.majorVersion}.\\${parsedVersion.minorVersion}.\\${parsedVersion.nextIncrementalVersion} versions:commit
+            sh '''mvn build-helper:parse-version versions:set -DnewVersion=\\${parsedVersion.majorVersion}.\\${parsedVersion.minorVersion}.\\${parsedVersion.nextIncrementalVersion} versions:commit 
 mvn clean install deploy'''
           }
         }
@@ -40,7 +40,7 @@ mvn clean install deploy'''
         }
       }
     }
-    stage('update build#') {
+    stage('Update Build#') {
       steps {
         sh 'add step here'
       }
