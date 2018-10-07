@@ -40,6 +40,11 @@ mvn clean install deploy'''
         }
       }
     }
+    stage('Update Build#') {
+      steps {
+        sh 'git add pom.xml'
+      }
+    }
     stage('Deploy to Dev') {
       steps {
         sh 'cf push -f ./manifest_dev.yml'
