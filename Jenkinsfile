@@ -48,8 +48,7 @@ mvn clean install deploy'''
             sh 'git config user.name ${GIT_USERNAME} '
             sh 'git add pom.xml'
             sh 'git commit -m "updated build number" '
-            sh 'git merge master'
-            sh 'git pull origin'
+            sh 'git remote add origin https://github.com/gargmunish/hello-spring-cloud-master.git'
             sh 'git push origin'
           }
         }
