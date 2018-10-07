@@ -42,7 +42,12 @@ mvn clean install deploy'''
     }
     stage('Update Build#') {
       steps {
-        sh '## Add Test Step here'
+        script {
+          withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+            sh 'git add pom.xml'
+          }
+        }
+
       }
     }
     stage('Deploy to Dev') {
