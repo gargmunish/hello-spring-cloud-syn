@@ -45,7 +45,7 @@ mvn clean install deploy'''
         script {
           withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
             sh 'git add pom.xml'
-            sh 'git comit -m "updated build number" '
+            sh 'git commit -m "updated build number" '
           }
         }
 
