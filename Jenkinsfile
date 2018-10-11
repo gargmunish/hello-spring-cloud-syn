@@ -11,6 +11,7 @@ pipeline {
         stage('Sonar') {
           steps {
             sh 'echo "Sonar"'
+            withAnt(installation: 'fasfa', jdk: 'jdk8')
           }
         }
         stage('PMD') {
