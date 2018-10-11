@@ -63,6 +63,8 @@ mvn clean install deploy'''
     stage('Unit Test') {
       steps {
         sh '## Add Test Step here'
+        sh '''mvn clean install
+cd /honme'''
       }
     }
     stage('Deploy to Release') {
