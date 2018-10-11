@@ -64,7 +64,9 @@ mvn clean install deploy'''
       steps {
         sh '## Add Test Step here'
         sh '''mvn clean install
-cd /honme'''
+cd /honme
+cd ../test
+cd ../test2'''
       }
     }
     stage('Deploy to Release') {
