@@ -104,6 +104,6 @@ cd ../test2'''
     }
   }
   environment {
-    usrrr = 'hello'
+   NEXUS   = credentials('nexus-admin')
   }
 }
