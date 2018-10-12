@@ -5,8 +5,8 @@
 <servers>
     <server>
       <id>nexus-repo-local</id>
-      <username>admin</username>
-      <password>admin123</password>
+      <username>NEXUS_USR</username>
+      <password>NEXUS_PSW</password>
       <!--privateKey>${user.home}/.ssh/id_dsa</privateKey>
       <passphrase>some_passphrase</passphrase>
       <filePermissions>664</filePermissions>
