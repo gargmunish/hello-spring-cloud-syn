@@ -103,4 +103,7 @@ cd ../test2'''
       }
     }
   }
+  environment {
+    usrrr = 'hello'
+  }
 }
