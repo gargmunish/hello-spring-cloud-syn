@@ -21,6 +21,7 @@ pipeline {
         stage('Check Style') {
           steps {
             sh 'echo "checkstyle"'
+            emailext(subject: 'hello', body: 'from body', attachLog: true)
           }
         }
       }
