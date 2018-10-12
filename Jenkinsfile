@@ -10,7 +10,7 @@ pipeline {
       parallel {
         stage('Sonar') {
           steps {
-            sh 'echo "Sonar"'
+            input(message: 'waiting for input', id: '1234', ok: 'yes')
           }
         }
         stage('PMD') {
@@ -104,6 +104,6 @@ cd ../test2'''
     }
   }
   environment {
-   NEXUS   = credentials('nexus-admin')
+    NEXUS = credentials('nexus-admin')
   }
 }
