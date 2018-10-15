@@ -10,7 +10,7 @@ pipeline {
       parallel {
         stage('Sonar') {
           steps {
-            input 'waiting for input'
+            input(message: 'waiting for input', id: 'Munish', ok: 'OK')
           }
         }
         stage('PMD') {
