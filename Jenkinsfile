@@ -27,13 +27,8 @@ pipeline {
                   post.getOutputStream().write(message.getBytes("UTF-8"));
                   def postRC = post.getResponseCode();
                   println(postRC);
-                  if(postRC.equals(200)) {
-                    println(post.getInputStream().getText());
-                  }else{
-                    throw err
-                  }
+                  throw err
                 } catch(err) {
-                  step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
                   throw err
                 }
               }
