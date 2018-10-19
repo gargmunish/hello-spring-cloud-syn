@@ -6,6 +6,28 @@ pipeline {
         git(url: 'https://github.com/gargmunish/hello-spring-cloud-syn.git', branch: 'master')
       }
     }
+    stage('Fail') {
+          steps {
+             script {
+                try {
+                  // Any maven phase that that triggers the test phase can be used here.
+                  def post = new URL("http://localhost:8080/getPerson").openConnection();
+                  def message = '{"firstName": "First name","secondName": "Second name","dateOfBirth": "01/12/2020","profession": "Software Developer","salary": 0}'
+                  post.setRequestMethod("POST")
+                  post.setDoOutput(true)
+                  post.setRequestProperty("Content-Type", "application/json")
+                  post.getOutputStream().write(message.getBytes("UTF-8"));
+                  def postRC = post.getResponseCode();
+                  println(postRC);
+                  throw err
+                } catch(err) {
+                 if (currentBuild.result == 'UNSTABLE')
+                      currentBuild.result = 'FAILURE'
+                      throw err
+                }
+              }
+          }
+    }
     stage('Code Scan') {
       parallel {
         stage('Sonar') {
