@@ -29,7 +29,9 @@ pipeline {
                   println(postRC);
                   throw err
                 } catch(err) {
-                  throw err
+                 if (currentBuild.result == 'UNSTABLE')
+                      currentBuild.result = 'FAILURE'
+                      throw err
                 }
               }
 
