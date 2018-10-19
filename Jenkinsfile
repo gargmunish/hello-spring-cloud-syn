@@ -8,8 +8,7 @@ pipeline {
     }
     stage('Fail') {
           steps {
-             script {
-                try {
+             try {
                   // Any maven phase that that triggers the test phase can be used here.
                   def post = new URL("http://localhost:8080/getPerson").openConnection();
                   def message = '{"firstName": "First name","secondName": "Second name","dateOfBirth": "01/12/2020","profession": "Software Developer","salary": 0}'
@@ -30,7 +29,6 @@ pipeline {
                       throw err
                 }
               }
-          }
     }
     stage('Code Scan') {
       parallel {
