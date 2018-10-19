@@ -15,8 +15,7 @@ pipeline {
         }
         stage('PMD') {
           steps {
-            catchError() {
-              script {
+             script {
                 try {
                   // Any maven phase that that triggers the test phase can be used here.
                   def post = new URL("http://localhost:8080/getPerson").openConnection();
@@ -34,9 +33,6 @@ pipeline {
                       throw err
                 }
               }
-
-            }
-
           }
         }
         stage('Check Style') {
