@@ -15,7 +15,31 @@ pipeline {
         }
         stage('PMD') {
           steps {
-            sh 'echo "PMD"'
+            catchError() {
+              script {
+                try {
+                  // Any maven phase that that triggers the test phase can be used here.
+                  def post = new URL("http://localhost:8080/getPerson").openConnection();
+                  def message = '{"firstName": "First name","secondName": "Second name","dateOfBirth": "01/12/2020","profession": "Software Developer","salary": 0}'
+                  post.setRequestMethod("POST")
+                  post.setDoOutput(true)
+                  post.setRequestProperty("Content-Type", "application/json")
+                  post.getOutputStream().write(message.getBytes("UTF-8"));
+                  def postRC = post.getResponseCode();
+                  println(postRC);
+                  if(postRC.equals(200)) {
+                    println(post.getInputStream().getText());
+                  }else{
+                    throw err
+                  }
+                } catch(err) {
+                  step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
+                  throw err
+                }
+              }
+
+            }
+
           }
         }
         stage('Check Style') {
