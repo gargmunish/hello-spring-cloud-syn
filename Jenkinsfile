@@ -8,7 +8,13 @@ pipeline {
     }
     stage('Fail') {
       steps {
+        try {
+        // Any maven phase that that triggers the test phase can be used here.
         sh 'curl -d \'{"firstName": "First name","secondName": "Second name","dateOfBirth": "01/12/2020","profession": "Software Developer","salary": 0}\' -H "Content-Type: application/json; charset=UTF-8" -X POST http://localhost:8443/getPerson'
+    } catch(err) {
+        step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
+        throw err
+    }
       }
     }
     stage('Code Scan') {
