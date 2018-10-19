@@ -22,6 +22,7 @@ pipeline {
           }
         }
 
+        sleep(unit: 'SECONDS', time: 30)
       }
     }
     stage('Code Scan') {
