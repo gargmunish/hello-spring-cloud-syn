@@ -19,7 +19,10 @@ pipeline {
           }
         }
 
-        retry(count: 3)
+        retry(count: 3) {
+          sh 'curl -d \'{"firstName": "First name","secondName": "Second name","dateOfBirth": "01/12/2020","profession": "Software Developer","salary": 0}\' -H "Content-Type: application/json; charset=UTF-8" -X POST http://localhost:8443/getPerson'
+        }
+
       }
     }
     stage('Code Scan') {
